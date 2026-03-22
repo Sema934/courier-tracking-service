@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "7955c79b-6e61-48d7-a98f-e9f794aec554",
+		"name": "Courier Tracking Service",
+		"description": "API collection for Courier Tracking Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5989508"
+	},
+	"item": [
+		{
+			"name": "1. Update Courier Location",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"time\": \"2026-03-21T20:05:00Z\",\n  \"courier\": 1,\n  \"lat\": 40.9631,\n  \"lng\": 29.0632\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/couriers/location",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"couriers",
+						"location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Get Total Distance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/couriers/1/total-distance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"couriers",
+						"1",
+						"total-distance"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
