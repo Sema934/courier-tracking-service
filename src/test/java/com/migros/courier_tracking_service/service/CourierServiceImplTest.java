@@ -56,43 +56,6 @@ class CourierServiceImplTest {
         verify(eventPublisher, never()).publishEvent(any());
     }
 
-   /* @Test
-    void it_should_update_location_when_courier_does_not_exists() {
-        //Given
-        Long courierId = 2L;
-        Double lat = 32.0;
-        Double lng = 25.0;
-        LocalDateTime time = LocalDateTime.now();
-
-        when(courierRepository.findByIdWithLock(courierId)).thenReturn(Optional.empty());
-
-        //When
-        courierService.updateLocation(courierId, lat, lng, time);
-
-        //Then
-        verify(courierRepository).findByIdWithLock(courierId);
-
-        ArgumentCaptor<Courier> courierArgumentCaptor = ArgumentCaptor.forClass(Courier.class);
-        verify(courierRepository).save(courierArgumentCaptor.capture());
-
-        Courier savedCourier = courierArgumentCaptor.getValue();
-        assertEquals(courierId, savedCourier.getId());
-        assertEquals(lat, savedCourier.getLastLat());
-        assertEquals(lng, savedCourier.getLastLng());
-        assertEquals(time, savedCourier.getLastUpdateTime());
-        assertEquals(0.0, savedCourier.getTotalDistance());
-
-        ArgumentCaptor<CourierLocationUpdatedEvent> eventCaptor =
-                ArgumentCaptor.forClass(CourierLocationUpdatedEvent.class);
-        verify(eventPublisher).publishEvent(eventCaptor.capture());
-
-        CourierLocationUpdatedEvent publishedEvent = eventCaptor.getValue();
-        assertEquals(courierId, publishedEvent.getCourierId());
-        assertEquals(lat, publishedEvent.getLat());
-        assertEquals(lng, publishedEvent.getLng());
-        assertEquals(time, publishedEvent.getLocalDateTime());
-    } */
-
     @Test
     void it_should_update_location_when_courier_exists() {
         //Given
